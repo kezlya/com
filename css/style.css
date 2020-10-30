@@ -950,7 +950,7 @@ img.with-border{
 /* 06.2.1 Main Slider Flexslider Control Nav & Paging */
 /* ----------------------------------------------*/
 #main-slider .flex-control-nav, .flex-control-paging{
-	 background-color:transparent; !important;
+	 background-color:transparent !important;
 	 margin:0; padding:0;
 	 position:absolute;
 	 bottom:0;
@@ -3387,11 +3387,11 @@ button.mfp-close, button.mfp-arrow {
 	}
 }
 
-@media screen and (max-width: 630px) {
+/* @media screen and (max-width: 630px) {
 	#main-slider.flexslider {
 		height:478px!important;
 	}
-}
+} */
 
 
 
