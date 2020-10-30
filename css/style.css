@@ -199,8 +199,8 @@
 /*===============================================*/
 /* 01. GENERAL			 						 */
 /*===============================================*/
-body{
-	font-family: 'Arvo', serif;	
+body {
+	font-family: 'Bitter', serif;
 	color:#6a6a6a;
 	font-size:15px;
 }
@@ -262,7 +262,7 @@ h4.inline, h5.inline, h6.inline{
 }
 
 p{
-	font-family: 'Arvo', serif;	
+	font-family: 'Bitter', serif;	
 	font-size:15px;
 	line-height:26px;
 	margin-bottom:25px;
@@ -882,7 +882,7 @@ img.with-border{
 	background-color:#f0394d; 
 	color:#FFF; 
 	text-align:center; 
-	font-family: 'Arvo', serif;
+	font-family: 'Bitter', serif;
 }
 
 .css-logo.rounded{
@@ -895,7 +895,7 @@ img.with-border{
 }
 
 .css-logo-text > i {
-	font-size:10px;
+	font-size:14px;
 }
 
 /* ----------------------------------------------*/
@@ -2339,7 +2339,7 @@ form label{
 }
 
 .option-label{
-	font-family: 'Arvo', serif;	
+	font-family: 'Oswald', serif;	
 	color:#6a6a6a;
 	font-size:13px;
 }
@@ -2352,7 +2352,7 @@ form .btn-primary
     padding: 12px 18px;
     margin: 0 15px 5px 15px; 
     border-radius: 0;
-	font-family: 'Arvo', serif;	
+	font-family: 'Bitter', serif;	
 	color:#6a6a6a;
 	font-size:13px;
   	background-color: #FFF;
@@ -2668,6 +2668,10 @@ footer .image-divider.fixed-height{
 	font-family: 'Pacifico', cursive; 
 	font-size:36px; 
 	margin-top:70px;
+}
+
+#guest-name{
+	text-transform: capitalize
 }
 
 #banner-date{

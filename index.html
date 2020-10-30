@@ -63,7 +63,7 @@
       type="text/css"
     />
     <link
-      href="http://fonts.googleapis.com/css?family=Arvo:400,700"
+      href="http://fonts.googleapis.com/css?family=Bitter:400,700"
       rel="stylesheet"
       type="text/css"
     />
@@ -75,11 +75,6 @@
 
     <!-- Theme CSS -->
     <link href="css/style.css" rel="stylesheet" media="screen" />
-
-    <!-- Skin CSS -->
-    <!-- <link href="css/skin/light-teal/light-teal.css" rel="stylesheet" media="screen"> -->
-    <!-- <link href="css/skin/light-teal/light-teal-reverse-navbar.css" rel="stylesheet" media="screen"> -->
-    <!-- <link href="css/skin/pattern/pattern-1.css" rel="stylesheet" media="screen"> -->
   </head>
 
   <body class="outside-bottom-bar-page">
@@ -112,7 +107,9 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-offset-3 col-md-6 animation delay1 fadeInUp">
-                  <div id="invited">Вы приглашены</div>
+                  <div id="invited">
+                    <span id="guest-name"></span>Вы приглашены
+                  </div>
                   <div class="banner-text withlove medium light">
                     <h1>МЫ ЖЕНИМСЯ</h1>
                   </div>
@@ -154,9 +151,9 @@
         >
           <div id="nav-wrapper">
             <!-- LOGO -->
-            <div class="logo-wrapper">
+            <div class="logo-wrapper nav-smooth-scroll">
               <!-- CSS LOGO -->
-              <a href="index.html">
+              <a href="#main-slider">
                 <div class="css-logo rounded">
                   <div class="css-logo-text">
                     <strong>В</strong><i class="de-icon-heart-1"></i
@@ -178,18 +175,12 @@
 
             <ul id="nav-menu" class="nav-smooth-scroll">
               <li class="first-child">
-                <a href="#main-slider">НА ВЕРХ</a>
-              </li>
-              <li>
                 <a href="#our-story">НАША ИСТОРИЯ</a>
               </li>
               <li>
                 <a href="#where-when">ГДЕ &amp; КОГДА</a>
               </li>
               <li class="first-child split-margin">
-                <a href="#gallery-section">ГАЛЕРЕЯ</a>
-              </li>
-              <li>
                 <a href="#groomsmen-section">ДРУГ &amp; ПОДРУЖКА</a>
               </li>
               <li>
@@ -352,16 +343,9 @@
             <!-- SECTION TITLE -->
             <div class="col-sm-12 col-md-offset-2 col-md-8 text-center">
               <div class="section-title animation fadeInUp">
-                <h2>OUR <img src="images/heart-icon.png" alt="" /> STORY</h2>
-
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer ultrices malesuada ante quis pharetra. Nullam notn
-                  bibendum dolor. Ut vel turpis accumsan, efficitur dolor
-                  fermentum, tincidunt metus. Etiam ut ultrices nibh. Etiam
-                  aliquam mauris non hendrerit faucibus. Proin pulvinar congue
-                  ex, vitae
-                </p>
+                <h2>
+                  НАША <img src="images/heart-icon.png" alt="heart" /> ИСТОРИЯ
+                </h2>
               </div>
             </div>
           </div>
@@ -421,7 +405,7 @@
             </div>
 
             <div class="col-sm-12 col-md-4 animation delay1 fadeInRight">
-              <h3>НАШЕ ЗНАКОМСТВО</h3>
+              <h3>ЗНАКОМСТВО</h3>
               <p>
                 В один из пятничных вечеров мы пришли в Антикафе поиграть в
                 Мафию, попить вкусный, ароматный кофе и пообщаться с
@@ -674,15 +658,6 @@
             <div class="col-md-offset-2 col-md-8 text-center">
               <div class="section-title animation fadeInUp">
                 <h2>ГДЕ <span class="and">&amp;</span> КОГДА</h2>
-
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer ultrices malesuada ante quis pharetra. Nullam notn
-                  bibendum dolor. Ut vel turpis accumsan, efficitur dolor
-                  fermentum, tincidunt metus. Etiam ut ultrices nibh. Etiam
-                  aliquam mauris non hendrerit faucibus. Proin pulvinar congue
-                  ex, vitae
-                </p>
               </div>
             </div>
           </div>
@@ -805,7 +780,7 @@
                     href="#rsvp-section"
                     class="smooth-scroll de-button outline medium animation fadeInUp"
                   >
-                    RSVP
+                    ЗАПИСЬ
                   </a>
                 </div>
               </div>
@@ -982,7 +957,7 @@
             <!-- SECTION TITLE -->
             <div class="col-md-offset-2 col-md-8 text-center">
               <div class="section-title animation fadeInUp">
-                <h2>RSVP</h2>
+                <h2>ЗАПИСЬ</h2>
 
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -1006,7 +981,7 @@
             <form method="post" action="rsvp.php" id="rsvpform">
               <div class="col-md-6">
                 <div id="fullname" class="form-group">
-                  <label for="inputname">*NAME</label>
+                  <label for="inputname">*ИМЯ</label>
                   <input
                     type="text"
                     class="form-control ajax-input"
@@ -1016,7 +991,7 @@
                     data-output-label="Output Name"
                   />
                 </div>
-                <div id="email" class="form-group">
+                <!-- <div id="email" class="form-group">
                   <label for="inputemail">*EMAIL</label>
                   <input
                     type="email"
@@ -1026,9 +1001,9 @@
                     data-required="Email Required"
                     data-output-label="Output Email"
                   />
-                </div>
+                </div> -->
                 <div id="events" class="form-group">
-                  <label for="inputevents">*I WILL ATTEND TO</label>
+                  <label for="inputevents">*Я ПРИДУ С</label>
                   <select
                     multiple
                     id="inputevents"
@@ -1044,7 +1019,7 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="inputmessage">LEAVE YOUR MESSAGE</label>
+                  <label for="inputmessage">СООБЩЕНИЕ</label>
                   <textarea
                     id="inputmessage"
                     class="form-control ajax-input"
@@ -1060,7 +1035,7 @@
                     id="submitButton"
                     name="submitButton"
                     class="button medium reverse"
-                    value="SUBMIT"
+                    value="ОТПРАВИТЬ"
                   />
                 </div>
               </div>

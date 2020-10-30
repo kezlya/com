@@ -74,6 +74,13 @@
 */
 
 $(document).ready(function () {
+  ;(function () {
+    const inviteTitle = document.getElementById('guest-name')
+    const guestName = new URLSearchParams(window.location.search).get('name')
+    if (guestName) {
+      inviteTitle.innerHTML = `${guestName}, `
+    }
+  })()
   // 01. BROWSER AGENT FUNCTION
   //==================================================================================
 
