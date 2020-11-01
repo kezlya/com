@@ -1060,8 +1060,7 @@
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
     <script>
       // Your web app's Firebase configuration
@@ -1071,25 +1070,23 @@
         authDomain: 'wedding-kezlya.firebaseapp.com',
         databaseURL: 'https://wedding-kezlya.firebaseio.com',
         projectId: 'wedding-kezlya',
-        storageBucket: 'wedding-kezlya.appspot.com',
-        messagingSenderId: '625072176577',
         appId: '1:625072176577:web:13fe1190a1a3e708918340',
         measurementId: 'G-0FXBWY2V5Q',
       }
       // Initialize Firebase
-      firebase.initializeApp(firebaseConfig)
+      var app = firebase.initializeApp(firebaseConfig)
+      var db = firebase.firestore(app);
       firebase.analytics()
-      const db = firebase.database()
 
       const name = $('#inputname').val()
       const message = $('#inputmessage').val()
       $('#submitButton1').click(function (event) {
-        console.log(db)
         event.preventDefault()
-        db.ref('guests/' + name).set({
+
+        db.collection("guests").doc("g-"+name).set({
           guest: name,
           message,
-        })
+        });
       })
     </script>
     <!-- Custom Core Script -->
