@@ -81,6 +81,20 @@ $(document).ready(function () {
       inviteTitle.innerHTML = `${guestName}, <br>`
     }
   })()
+  ;(function () {
+    // const name = $('#inputname').val()
+    // const message = $('#inputmessage').val()
+    // $('#submitButton1').click(function (event) {
+    //   event.preventDefault()
+    //   firebase
+    //     .database()
+    //     .ref('guests/' + name)
+    //     .set({
+    //       guest: name,
+    //       message,
+    //     })
+    // })
+  })()
   // 01. BROWSER AGENT FUNCTION
   //==================================================================================
 

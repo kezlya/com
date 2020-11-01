@@ -607,7 +607,7 @@
               <p>
                 В эту замечательную дату мы приглашаем всех родных и близких
                 разделить с нами это радостное событие. На ваших глазах
-                произойдет официальной ро
+                произойдет официальной рождение нашей, счастливой семьи.👨‍👩‍👧‍👦
               </p>
             </div>
 
@@ -920,12 +920,9 @@
                 <h2>ЗАПИСЬ</h2>
 
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer ultrices malesuada ante quis pharetra. Nullam notn
-                  bibendum dolor. Ut vel turpis accumsan, efficitur dolor
-                  fermentum, tincidunt metus. Etiam ut ultrices nibh. Etiam
-                  aliquam mauris non hendrerit faucibus. Proin pulvinar congue
-                  ex, vitae
+                  Уважаемые гости! Убедительная просьба записать всех гостей, с
+                  которыми вы придете. Так же укажите если вам понадобится
+                  транспорт.
                 </p>
               </div>
             </div>
@@ -938,43 +935,18 @@
               <!-- Show Message -->
             </div>
 
-            <form method="post" action="rsvp.php" id="rsvpform">
+            <form id="rsvpform1">
               <div class="col-md-6">
-                <div id="fullname" class="form-group">
+                <div id="name" class="form-group">
                   <label for="inputname">*ИМЯ</label>
                   <input
                     type="text"
                     class="form-control ajax-input"
                     id="inputname"
                     placeholder=""
-                    data-required="Name Required"
+                    data-required="Это поле обязательное"
                     data-output-label="Output Name"
                   />
-                </div>
-                <!-- <div id="email" class="form-group">
-                  <label for="inputemail">*EMAIL</label>
-                  <input
-                    type="email"
-                    class="form-control ajax-input"
-                    id="inputemail"
-                    placeholder=""
-                    data-required="Email Required"
-                    data-output-label="Output Email"
-                  />
-                </div> -->
-                <div id="events" class="form-group">
-                  <label for="inputevents">*Я ПРИДУ С</label>
-                  <select
-                    multiple
-                    id="inputevents"
-                    class="form-control ajax-input"
-                    data-required="Please Select Events"
-                    data-output-label="Output Events"
-                  >
-                    <option>Wedding Day</option>
-                    <option>Ceremony Day</option>
-                    <option>The Party</option>
-                  </select>
                 </div>
               </div>
               <div class="col-md-6">
@@ -992,8 +964,8 @@
                 <div class="form-group">
                   <input
                     type="submit"
-                    id="submitButton"
-                    name="submitButton"
+                    id="submitButton1"
+                    name="submitButton1"
                     class="button medium reverse"
                     value="ОТПРАВИТЬ"
                   />
@@ -1083,16 +1055,47 @@
     <script src="js/magnific-popup/jquery.magnific-popup.js"></script>
     <!-- Owl Carousel -->
     <script src="js/owlcarousel/owl.carousel.js"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src="js/markerlabel/markerwithlabel.js"></script>
     <!-- RSVP -->
-    <script src="js/rsvp/rsvp.js"></script>
+    <!-- <script src="js/rsvp/rsvp.js"></script> -->
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: 'AIzaSyCY65jMlvUBMoSG5ngBRzLHs2-UqXf14G0',
+        authDomain: 'wedding-kezlya.firebaseapp.com',
+        databaseURL: 'https://wedding-kezlya.firebaseio.com',
+        projectId: 'wedding-kezlya',
+        storageBucket: 'wedding-kezlya.appspot.com',
+        messagingSenderId: '625072176577',
+        appId: '1:625072176577:web:13fe1190a1a3e708918340',
+        measurementId: 'G-0FXBWY2V5Q',
+      }
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig)
+      firebase.analytics()
+      const db = firebase.database()
+
+      const name = $('#inputname').val()
+      const message = $('#inputmessage').val()
+      $('#submitButton1').click(function (event) {
+        console.log(db)
+        event.preventDefault()
+        db.ref('guests/' + name).set({
+          guest: name,
+          message,
+        })
+      })
+    </script>
     <!-- Custom Core Script -->
     <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/map-script.js"></script>
     <!-- Custom Additional Script -->
     <script type="text/javascript" src="js/main-slider-fade.js"></script>
+    <script></script>
   </body>
 </html>
