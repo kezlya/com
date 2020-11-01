@@ -259,7 +259,7 @@
               <div class="photo-item frame-border animation fadeInRight">
                 <!--PHOTO-->
                 <img
-                  src="/images/anastasiya.jpeg"
+                  src="/images/anastasiya.jpg"
                   alt=""
                   class="hover-animation image-zoom-in"
                 />
@@ -276,7 +276,7 @@
                 >
                   <div class="alignment">
                     <div class="v-align center-middle">
-                      <a href="/images/anastasiya.jpeg" class="magnific-zoom">
+                      <a href="/images/anastasiya.jpg" class="magnific-zoom">
                         <div class="de-icon circle light medium-size inline">
                           <i class="de-icon-zoom-in"></i>
                         </div>
@@ -901,7 +901,7 @@
 
       <!-- RSVP SECTION -->
       <section id="rsvp-section">
-        <div class="container">
+        <div class="container" id="form-section">
           <!-- ROW-1 -->
           <div class="row">
             <!-- SECTION TITLE -->
@@ -926,9 +926,9 @@
             </div>
 
             <form id="rsvpform1">
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <div id="name" class="form-group">
-                  <label for="inputname">*ИМЯ</label>
+                  <label for="inputname">*ИМЯ И ФАМИЛИЯ</label>
                   <input
                     type="text"
                     class="form-control ajax-input"
@@ -939,7 +939,7 @@
                   />
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <div class="form-group">
                   <label for="inputmessage">СООБЩЕНИЕ</label>
                   <textarea
@@ -963,6 +963,21 @@
               </div>
             </form>
           </div>
+        </div>
+        <div class="container" id="form-section-thanks">
+          <!-- ROW-1 -->
+          <div class="row">
+            <!-- SECTION TITLE -->
+            <div class="col-md-offset-2 col-md-8 text-center">
+              <div class="section-title animation fadeInUp">
+                <h2>Спасибо</h2>
+                <p>Ваше сообщение отправлено!</p>
+              </div>
+            </div>
+          </div>
+          <!-- END of ROW-1 -->
+
+          <!-- FORM -->
         </div>
       </section>
     </section>
@@ -1056,6 +1071,19 @@
     <script type="text/javascript" src="js/script.js"></script>
     <!-- Custom Additional Script -->
     <script type="text/javascript" src="js/main-slider-fade.js"></script>
-    <script></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DWDD84BYTD"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-DWDD84BYTD')
+    </script>
   </body>
 </html>

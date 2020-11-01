@@ -82,18 +82,53 @@ $(document).ready(function () {
     }
   })()
   ;(function () {
-    // const name = $('#inputname').val()
-    // const message = $('#inputmessage').val()
-    // $('#submitButton1').click(function (event) {
-    //   event.preventDefault()
-    //   firebase
-    //     .database()
-    //     .ref('guests/' + name)
-    //     .set({
-    //       guest: name,
-    //       message,
-    //     })
-    // })
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: 'AIzaSyCY65jMlvUBMoSG5ngBRzLHs2-UqXf14G0',
+      authDomain: 'wedding-kezlya.firebaseapp.com',
+      databaseURL: 'https://wedding-kezlya.firebaseio.com',
+      projectId: 'wedding-kezlya',
+      appId: '1:625072176577:web:13fe1190a1a3e708918340',
+      measurementId: 'G-0FXBWY2V5Q',
+    }
+    // Initialize Firebase
+    var app = firebase.initializeApp(firebaseConfig)
+    var db = firebase.firestore(app)
+    firebase.analytics()
+
+    $('#submitButton1').click(function (event) {
+      event.preventDefault()
+      const guestName = $('#inputname').val()
+      const guestMessage = $('#inputmessage').val()
+      const message = $('#message')
+      const userNameFromURL = new URLSearchParams(window.location.search).get(
+        'name'
+      )
+      db.collection('guests')
+        .doc('g-' + guestName)
+        .set({
+          guest: guestName,
+          user: userNameFromURL,
+          message: guestMessage,
+        })
+        .then(function () {
+          $('#form-section').fadeOut()
+          $('#form-section-thanks').fadeIn()
+          $('html, body').animate(
+            {
+              scrollTop: $('#form-section-thanks').offset().top - 300,
+            },
+            1000
+          )
+        })
+        .catch(function (error) {
+          message.text(
+            'Что то пошло не так, попробуйте повторить позже: ',
+            error
+          )
+        })
+    })
   })()
   // 01. BROWSER AGENT FUNCTION
   //==================================================================================
